@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ZS新闻资讯</title>
+
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.flexslider').flexslider({
+		directionNav: true,
+		pauseOnAction: false
+	});
+});
+</script>
+
+
+<style>
+	*{margin: 0;padding: 0;}
+	li{list-style: none;}
+	input,button{border: 0;vertical-align: middle;}
+	button{cursor: pointer;}
+	img{vertical-align: middle;border: 0;}
+	a{text-decoration: none;}
+	body{font-family: "宋体";}
+	
+	.box{overflow: hidden;min-width: 1200px;}
+/*	头部区域*/
+	.header{width: 1200px;height: 166px;margin: auto}
+	.header>img{margin-top:40px;float: left}
+	
+	.header-denglu{width:450px;height:20px;margin-top: 35px;line-height: 20px;float: right;margin-left: 200px}
+	.header-denglu>li{float: left}
+	.header-denglu>li>a{font-size:12px;float: left;color:#666;margin: 0 5px}
+	.header-denglu>li:nth-of-type(3) a{background: url(images/telleft.png) no-repeat left;padding-left:15px}
+	.header-denglu>li:nth-of-type(3) a:hover{background-image: url(images/telleft2.png)}
+	.header-denglu>li>a:hover{color:#D2A06D;}
+	.header-denglu>li>span{color:#666;}
+	.header-denglu>li>select{border:none;width:100px;color: #666;
+	/* 将默认的select选择框样式清除*/
+     appearance:none;
+     -moz-appearance:none;
+     -webkit-appearance:none;
+   /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("images/xiala.png") no-repeat scroll right center transparent;padding-left: 5px;outline:none;}
+	
+	.header-yuyue{width:473px;height:38px;float:right;margin-top:40px;font-size: 12px;color: #666}
+	.header-yuyue>.xingming{width: 145px;height:34px;line-height: 34px;padding-left: 10px;}
+	.header-yuyue>.city{width:180px;height:34px;line-height: 34px;background: url(images/ico-seach1.png)no-repeat 160px ;padding-left:10px;}
+	.header-yuyue>input{border: 1px solid #ddd;}
+	.header-yuyue>button{width: 76px;height:36px;color: white;background-color:#5F91B0;line-height: 38px;}
+/*	导航区域*/
+	.nav{height: 84px;background-color:#6091B1;font-family: "微软雅黑" }
+	.nav-text{width: 1200px;margin:auto;}
+	.nav-text>li{float: left;width: 200px;height: 84px;position: relative;transition: all 1s;}
+	.nav-text>li>a{display: block;text-align: center;font-size: 16px;color: white;padding: 25px 0;}
+	.nav-text>li:hover{background-color:#D2A06D; }
+	.nav-text>li>a>p{font-size: 12px;}
+	.dqym,.nav-text>li:nth-child(5):hover{background-color: #D2A06D;}
+	.nav-text:hover .dqym{background-color: #5F90AE;}
+
+/*	每日推荐二级导航*/
+	.nav-erji{height:0px;width:200px;background-color:rgba(252,252,252,0.50);text-align: left;position: absolute;top: 84px;transition: all 1s;overflow: hidden;z-index: 1}
+	.nav-text>li:nth-of-type(2):hover .nav-erji{height: 350px;}
+	.nav-erji>ul>li{height: 49px;border-bottom: 1px dashed #ddd;line-height: 49px;font-size: 12px;}
+	.nav-erji>ul>li:hover a{color:#D2A06D }
+	.nav-erji>ul>li>a{color:#333;padding-left:55px}
+	
+	.nav-text>li:nth-of-type(3):hover .nav-erji{height: 350px;}
+	
+	.nav-text>li:nth-of-type(4):hover .nav-erji{height: 350px;}
+/*	banner区域*/
+	/* flexslider */
+.flexslider{position:relative;height:650px;overflow:hidden;}
+.slides{position:relative;z-index:-1;}
+.slides>li{height:650px;}
+.flex-control-nav{position:absolute;bottom:40px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:70px;height:5px;margin:0 10px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:70px;height:5px;line-height:80px;overflow:hidden;background:url(images/switch2.png);cursor:pointer;}
+.flex-control-nav .flex-active{background:url(images/switch.png);}
+	
+	
+/*	主体区域*/
+	.main{width: 1200px;margin: auto;text-align: center}
+	.main>img{margin:65px 0;}
+	.main-top{height: 66px;border-bottom: 1px solid #ddd;text-align: left}
+	.main-top>h1{font-size: 26px;color:#3E3A39;background: url(images/triangle.png) no-repeat left center;padding-left: 10px;}
+	.main-top>p{font-size:12px;margin-left:18px;font-family:"微软雅黑";color:#BCBCBC;margin-top: 10px;}
+	
+	.main-text1{overflow: hidden;height: 532px;padding-top: 100px;}
+	.main-text1 .main-left1{width: 680px;height: 432px;float: left;}
+	.main-left1>a{display: block;width:0px;height: 432px;transition: all 1s;float: left;}
+	.main-left1:hover a{background-color:rgba(255,255,255,0.60);width: 680px;}
+	.main-text1:nth-of-type(4) .main-left1{background-image: url(images/xinwen3.jpg)}
+	.main-text1:nth-of-type(2) .main-left1{background-image: url(images/xinwen1.jpg)}
+	.main-text1:nth-of-type(6) .main-left1{background-image: url(images/xinwen5.jpg)}
+	
+	.main-right1{width:420px;height: 432px;float: left;padding-left: 100px;}
+	.main-right1>p{width:320px;height:432px ;color:#999;text-indent: 2em;;text-align: justify;line-height:1.5;display: table-cell;vertical-align: bottom;}
+	
+	.main-text2{overflow: hidden;height:432px;}
+	.main-left2{width:420px;height: 432px;float: left;padding-left: 100px}
+	.main-text2 .main-right2{width: 680px;height: 432px;float: left;transition: all 1s}
+	.main-right2>a{display: block;width:0px;height: 432px;transition: all 1s;float: right;}
+	.main-right2:hover a{background-color: rgba(255,255,255,0.60);width: 680px;}
+	.main-text2:nth-of-type(3) .main-right2{background-image: url(images/xinwen2.jpg)}
+	.main-text2:nth-of-type(5) .main-right2{background-image: url(images/xinwen4.jpg)}
+	
+	
+	.main-left2>p{width:320px;height:432px ;color:#999;margin: auto;text-indent: 2em;;text-align: justify;line-height:1.5;display: table-cell;vertical-align: bottom;}
+	
+/*	雪碧图区域*/
+	.xuebitu{width:1068px;height: 342px;margin: auto;padding-top: 56px;border-top: 1px solid #ddd}
+	.xuebitu>ul>li{width:192px;height: 286px;text-align: center;font-size: 12px;margin-right: 100px;float: left;}
+	.xuebitu>ul>li:nth-of-type(4){margin-right: 0;}
+	.xuebitu>ul>li>p{color:#272727;margin-top: 24px;margin-bottom: 17px}
+	.xuebitu>ul>li>span{color:#73818A;}
+	.xuebitu>ul>li>a{display: block;background: url(images/kb.png) no-repeat 0 0;width:190px;height:217px;}
+	.xuebitu>ul>li:nth-of-type(2) a{background-position:-200px 0 }
+	.xuebitu>ul>li:nth-of-type(3) a{background-position:-400px 0 }
+	.xuebitu>ul>li:nth-of-type(4) a{background-position:-600px 0 }
+	
+	.xuebitu>ul>li>a:hover{background-position: 0 -220px}
+	.xuebitu>ul>li:nth-of-type(2) a:hover{background-position:-200px -220px }
+	.xuebitu>ul>li:nth-of-type(3) a:hover{background-position:-400px -220px}
+	.xuebitu>ul>li:nth-of-type(4) a:hover{background-position:-600px -220px }
+	
+	.xuebitu>ul>li:hover p{color:#D1A06C }
+	
+	/*底部导航区域*/
+	.footer-nav{height: 117px;background-color:#657680;border-bottom: 1px solid #ddd}
+	.footer-nav>.wzsy{width: 1200px;height: 117px;margin: auto;}
+	.footer-nav>.wzsy>li{width: 64px;height: 32px;float: left;margin: 43px 62px 43px 0;text-align: center}
+	.footer-nav>.wzsy>li:nth-of-type(10){margin-right: 0}
+	.footer-nav>.wzsy>li>a{font-size:15px;color: white;font-weight: bold;}
+	.footer-nav>.wzsy>li>p{font-size: 12px;color:#ddd;font-family: "微软雅黑";margin-top: 5px }
+	.footer-nav>.wzsy>li:hover a{color:#D1A06C }
+	
+/*	全国服务热线*/
+	.footer-quanguo{height: 148px;background-color:#657680 ;}
+	.footer-quanguo-main{width: 894px;height: 148px;margin: auto;padding-top: 40px }
+	.footer-left{width:550px;height: 73px;float: left }
+	.footer-left>h1{font-size: 27px;color:#D1A06C;font-family: "微软雅黑";font-weight: normal}
+	.footer-left>.footer-dian{font-size: 13px;color: white;width: 280px;border-right: 1px solid white;height: 30px;float: left;margin-top: 8px;}
+	.footer-left>.footer-bz{font-size: 13px;color: white;width: 225px;height: 30px;float: right;margin-top: 8px}
+	
+	.footer-right{width: 258px;height: 57px;float: right;margin-top: 10px}
+	.footer-right>a{display: block;float: left;margin-right:43px;}
+	.footer-right>a:hover{background-image: url(images/app1.png)}
+	.footer-right>a:nth-of-type(2):hover{background-image: url(images/weixin1.png)}
+	.footer-right>a:nth-of-type(3):hover{background-image: url(images/weibo1.png)}
+	.footer-right>a:nth-of-type(3){margin-right: 0}
+/*	版权区域*/
+	.banquan{height: 40px;background-color:#4E5C67;color: white;font-size: 14px;text-align: center;line-height: 40px;font-family:"Arial" ;}
+	
+/*	返回顶部*/
+	
+	.fd{width: 72px;height: 292px;position: fixed;right: 20px;bottom: 40px;}
+	
+	.fd>li>a{height: 72px;display: block;width: 72px;border-bottom: 1px solid #666;}
+	.fd>li:nth-of-type(1) a{background: url(images/r_qq.png) #6da9de}
+	.fd>li:nth-of-type(2) a{background: url(images/r_wx.png)#78c340;position: relative}
+	.fd>li:nth-of-type(2) div{width: 145px;height: 145px;background: url(images/erweima.png) no-repeat center top;background-size: 100%;position: absolute;right: 72px;top: 0; display: none}
+	.fd>li:nth-of-type(3) a{background: url(images/r_phone.png)#fbb01f;position: relative}
+	.fd>li:nth-of-type(3) div{width:145px;height: 72px;background-color:#ff811b;position: absolute;right: 72px; text-align: center;line-height:72px;font-weight: bold;color: white;display: none;}
+	
+	.fd>li:nth-of-type(4) a{background:url(images/r_top.png)#6091B1;border-bottom: none;}
+	
+	.fd>li:nth-of-type(1):hover a{background-color:#488bc7;}
+	.fd>li:nth-of-type(2):hover a{background-color: #58a81c;}
+	.fd>li:nth-of-type(2):hover div{display: block}
+	.fd>li:nth-of-type(3):hover div{display: block}
+	.fd>li:nth-of-type(3):hover a{background-color: #ff811b;}
+	.fd>li:nth-of-type(4):hover a{background-color:#657680 }
+	
+	
+</style>
+</head>
+
+<body>
+<div class="box">
+<!--头部区域-->
+	<div class="header">
+		<img src="images/logo.png" alt="">
+		<ul class="header-denglu">
+			<li><a href="login.html">登录</a><span>/</span></li>
+			<li><a href="login.html">注册</a><span>/</span></li>
+			<li><a href="#">400-88888888-666</a><span>/</span></li>
+			<li><a href="#">手机官网</a><span>/</span></li>
+			<li><a href="#">关注我们</a><span>/</span></li>
+			<li><select name="" id="">
+			<option value="">中文（简体）</option>
+			<option value="">中文（繁体）</option>
+			<option value="">English</option>
+			</select></li>
+		</ul>
+		<div class="header-yuyue">
+			姓名：<input type="text" placeholder="请输入您的姓名" class="xingming">
+			<input type="text" placeholder="请选择所在城市：&nbsp南昌" class="city">
+			<button>立即预约</button>
+		</div>
+		
+	</div>
+<!--	导航区域-->
+	<div class="nav">
+		<ul class="nav-text">
+			<li><a href="index.html">首页<p>HOME</p></a></li>
+<!--			每日推荐二级导航-->
+			<li><a href="#">每日推荐<p>FAVE</p></a>
+			<div  class="nav-erji">
+			<ul>
+				<li><a href="#">星期一/Day1</a></li>
+				<li><a href="#">星期二/Day2</a></li>
+				<li><a href="#">星期三/Day3</a></li>
+				<li><a href="#">星期四/Day4</a></li>
+				<li><a href="#">星期五/Day5</a></li>
+				<li><a href="#">星期六/Day6</a></li>
+				<li><a href="#">星期天/Day7</a></li>
+			</ul>
+			</div>
+			</li>
+<!--			全球客片二级导航-->
+			
+			<li><a href="xiangqingye.html">全球客片<p>LOVE SHOW</p></a>
+			    <div  class="nav-erji">
+			    <ul>
+				<li><a href="#">三亚/SANYA</a></li>
+				<li><a href="#">丽江/LIJIANG</a></li>
+				<li><a href="#">巴厘岛/BALI</a></li>
+				<li><a href="#">马尔代夫/MAERDAIFU</a></li>
+				<li><a href="#">普吉岛/PUJI</a></li>
+				<li><a href="#">济州岛/JIZHOU</a></li>
+				<li><a href="#">塞班岛/SAIPAN</a></li>
+			    </ul>
+			    </div>
+			
+			</li>
+			<li><a href="#">婚纱礼服<p>DRESS</p></a>
+			     <div  class="nav-erji">
+			    <ul>
+				<li><a href="#">优雅型/ELEGANT</a></li>
+				<li><a href="#">浪漫型/ROMANTIC</a></li>
+				<li><a href="#">艺术型/ARTISTIC</a></li>
+				<li><a href="#">休闲型/CASUAL</a></li>
+				<li><a href="#">典雅型/ELEGANCE</a></li>
+				<li><a href="#">极简型/MTNIMALIST</a></li>
+				<li><a href="#">复古型/ANTIONT</a></li>
+			    </ul>
+			    </div>
+			
+			
+			</li>
+			<li class="dqym"><a href="#">新闻资讯<p>NEWS</p></a></li>
+			<li><a href="#">关于我们<p>ABOUT</p></a></li>
+			
+			
+		</ul>
+	</div>
+<!--	banner区域-->
+	
+		
+		<div class="flexslider">
+	<ul class="slides">
+		<li style="background:url(images/banner1.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner2.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner3.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner4.jpg) 50% 0 no-repeat;"></li>
+	</ul>
+</div>
+		
+	
+<!--	主题区域-->
+	<div class="main">
+		<img src="images/news.png" alt="">
+	<div class="main-top">
+	    <h1>三亚婚纱哪家好</h1>
+		<p>SANYA WEDDING DRESS PHOTOGRAPHY WHICH IS GOOD</p>
+		</div>
+	
+		<div class="main-text1">
+		   <div class="main-left1"><a href="#"></a></div>	
+		   <div class="main-right1"><p>说到去三亚拍摄婚纱照，大家第一反应就是高价、高端、大气，这并不是完全没有道理的，因为它是全国的旅游城市，拥有独特的自然风光，因受到很多新人的喜爱。特别是海景婚纱照，基本上是每个女孩内心的追求。那去三亚拍摄婚纱照挑选什么样的婚纱摄影工作室呢？三亚婚纱摄影哪家又更好一点呢？现在小编就带大家一起去看看三亚婚纱摄影哪家更好一些。</p></div>
+		</div>
+		   
+		 <div class="main-text2">
+		   <div class="main-left2"><p>小编觉得能称得上比较好的三亚婚纱摄影要从三方面去考虑：服务，质量，性价比。三亚的婚纱摄影如同众星云集，无论是工作室还是影楼都是各有所长，拥有高端的旅拍或者是比较合适的性价比。但是在三亚这么多的婚纱摄影里要选择适合自己的才是比较好的。每队新人拍摄婚纱照都是比较上心的，自然我们挑选的婚纱摄影工作室也要有一定的责任心，服务到位。我们拥有全明星的专业技术团队，较前沿的摄影技术和较精致的妆容表现。我们拥有较时尚的创作理念，当下时尚、百年传承。还有4s无忧服务，5s人文关怀服务，幸福主流婚纱照的核心理念。无时无刻都精心为您打造高质量、全身心服务的婚纱照拍摄过程。</p></div>	
+		   <div class="main-right2"><a href="#"></a></div>
+		 </div>  
+		   
+		  <div class="main-text1">
+		   <div class="main-left1"><a href="#"></a></div>	
+		   <div class="main-right1"><p>在三亚所挑选的拍摄婚纱摄影工作室质量一定要是比较高的，因为三亚的婚纱摄影工作室比较多，大家在选择的时候一定要综合考虑，不能因为哪一点就那么草草决定了。选择婚纱摄影工作室一般在质量这一块要注意的是：妆容、服装造型、设备。好的三亚婚纱摄影对妆容的要求是很高的，一般选择三亚拍摄婚纱照的新人都要拍摄海边的大场景，妆容是不能有瑕疵的，和场景的搭配要得当。其次就是新人的服装这一块，要有适合各种场景的服装，不同人的喜好和想要的风格是不一样的，所以各式各样的服装都是要有的。当服装和妆容都没问题了以后就要看摄影工作室使用的设备了，较先进的设备器材所具有的功能是不一样的，级别越高，对于精细的部分展现的就越好，达到的效果也比一般的设备要好很多。所以说大家在选择三亚婚纱摄影的时候一定要慎重，多对比几家，挑选最好的。</p></div>
+		</div> 
+		   
+		 <div class="main-text2">
+		   <div class="main-left2"><p>拍婚纱照的性价比是每个要拍摄婚纱照的新人都会考虑的问题。无论新人怎样去选择，选的对了就错不了，在三亚的婚纱摄影中价格区别是很大的。所以小编建议新人们一定要注意了，在性价比这块一定要考虑好，挑选自己满意的。三亚婚纱摄影工作室虽然很多，但是他们的风格各有不同，新人在选择的时候一定要实事求是，选择适合自己的风格，以便拍出自己喜欢类型的婚纱照。</p></div>	
+		   <div class="main-right2"><a href="#"></a></div>
+		 </div> 
+		
+		 <div class="main-text1">
+		   <div class="main-left1"><a href="#"></a></div>	
+		   <div class="main-right1"><p>不知道大家了解了没有，在三亚选择婚纱摄影工作室的时候
+一定要注意以上问题，问清楚，讲明白。最后，小编希
+望大家都能拍摄出让自己十分满意的三亚婚纱照。</p></div>
+		</div> 
+	</div>
+<!--	雪碧图区域-->
+	<div class="xuebitu">
+		<ul>
+			<li><a href="#"></a>
+			  <p>一站式玩拍体验</p>
+			  <span>拍婚照·度蜜月·游美景·享美食</span>
+			</li>
+			
+			<li><a href="#"></a>
+			  <p>没有隐形消费</p>
+			  <span>除套系价格，全程不再收取任何费用</span>
+			</li>
+			
+			<li><a href="#"></a>
+			  <p>一坚持口碑营销</p>
+			  <span>更高品质的服务就是最有力度的营销</span>
+			</li>
+			
+			<li><a href="#"></a>
+			  <p>以客片说话</p>
+			  <span>总监团队，100%原创客片</span>
+			</li>
+		</ul>
+		
+		
+		
+	</div>
+<!--底部导航区域-->
+	<div class="footer-nav">
+		<ul class="wzsy">
+			<li><a href="index.html">网站首页</a><p>HOME</p></li>
+			<li><a href="xiangqingye.html">全球样片</a><p>WORKS</p></li>
+			<li><a href="#">客片欣赏</a><p>LOVESHOW</p></li>
+			<li><a href="#">新闻广告</a><p>NEWS</p></li>
+			<li><a href="#">景点介绍</a><p>SCENE</p></li>
+			<li><a href="#">关于我们</a><p>ABOUT</p></li>
+			<li><a href="#">联系我们</a><p>CONTACT</p></li>
+			<li><a href="#">最新留言</a><p>BOOK</p></li>
+			<li><a href="#">官方微博</a><p>WEIBO</p></li>
+			<li><a href="#">天猫店铺</a><p>TMALL</p></li>
+		</ul>
+	</div>
+<!--	全国服务热线-->
+	<div class="footer-quanguo">
+		<div class="footer-quanguo-main">
+			<div class="footer-left">
+				<h1>全国服务热线：400-88888888-666</h1>
+				   <div class="footer-dian">
+				<p>南昌店：江西省南昌市青山湖区紫阳大道</p>
+				<p>联系电话：0791-6666666</p>
+				   </div>
+				   <div class="footer-bz">
+				<p>巴中店：四川省巴中市通江县顺城大街</p>
+				<p>联系电话：0124-6666666</p>
+				   </div>
+			</div>
+			<div class="footer-right">
+				<a href="#"><img src="images/app.png" alt=""></a>
+				<a href="#"><img src="images/weixin.png" alt=""></a>
+				<a href="#"><img src="images/weibo.png" alt=""></a>
+				
+			</div>
+			</div>
+		</div>
+<!--	版权区域-->
+	<div class="banquan">copyright &copy; 2006-2017 zippy sunshine</div>
+	
+<!--	返回顶部-->
+	<ul class="fd">
+	<li><a target="_blank" href="tencent://message/?uin=你的QQ号&Site=网站名称&Menu=yes"></a></li>
+	<li><a href="#"><div></div></a></li>
+	<li><a href="#"><div>400-888888-666</div></a></li>
+	<li><a href="#"></a></li>
+</ul>
+	
+</div>
+
+
+</body>
+</html>

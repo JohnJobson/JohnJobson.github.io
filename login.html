@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ZS注册/登陆</title>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.flexslider').flexslider({
+		directionNav: true,
+		pauseOnAction: false
+	});
+});
+</script>
+
+
+
+<style>
+	*{margin: 0;padding: 0;}
+	li{list-style: none;}
+	input,button{border: 0;vertical-align: middle;outline: none;}
+	select{outline: none;}
+	button{cursor: pointer;}
+	img{vertical-align: middle;border: 0;}
+	a{text-decoration: none;}
+	body{font-family: "宋体";}
+	
+	.box{overflow: hidden;min-width: 1200px;}
+/*	头部区域*/
+	.header{width: 1200px;height: 166px;margin: auto}
+	.header>img{margin-top:40px;float: left}
+	
+	.header-denglu{width:450px;height:20px;margin-top: 35px;line-height: 20px;float: right;margin-left: 200px}
+	.header-denglu>li{float: left}
+	.header-denglu>li>a{font-size:12px;float: left;color:#666;margin: 0 5px}
+	.header-denglu>li:nth-of-type(3) a{background: url(images/telleft.png) no-repeat left;padding-left:15px}
+	.header-denglu>li:nth-of-type(3) a:hover{background-image: url(images/telleft2.png)}
+	.header-denglu>li>a:hover{color:#D2A06D;}
+	.header-denglu>li>span{color:#666;}
+	.header-denglu>li>select {border:none;width:100px;color: #666;
+    /* 将默认的select选择框样式清除*/
+     appearance:none;
+     -moz-appearance:none;
+     -webkit-appearance:none;
+   /*在选择框的最右侧中间显示小箭头图片*/
+     background: url("images/xiala.png") no-repeat scroll right center transparent;padding-left: 5px;outline:none;}
+	
+	.header-yuyue{width:473px;height:38px;float:right;margin-top:40px;font-size: 12px;color: #666}
+	.header-yuyue>.xingming{width: 145px;height:34px;line-height: 34px;padding-left: 10px;}
+	.header-yuyue>.city{width:180px;height:34px;line-height: 34px;background: url(images/ico-seach1.png)no-repeat 160px ;padding-left:10px;}
+	.header-yuyue>input{border: 1px solid #ddd;}
+	.header-yuyue>button{width: 76px;height:36px;color: white;background-color:#5F91B0;line-height: 38px;}
+	
+/*	banner区域*/
+	/* flexslider */
+.flexslider{position:relative;height:650px;overflow:hidden;}
+.slides{position:relative;z-index:-1;}
+.slides>li{height:650px;}
+.flex-control-nav{position:absolute;bottom:40px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:70px;height:5px;margin:0 10px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:70px;height:5px;line-height:80px;overflow:hidden;background:url(images/switch2.png);cursor:pointer;}
+.flex-control-nav .flex-active{background:url(images/switch.png);}
+	
+/*登录注册区域	*/
+	
+	.login{width: 396px;height: 506px;background-color: rgba(0,0,0,0.50);position: absolute;right:110px;top: 70px;border-radius: 10px;padding:0 12px}
+	
+	.login>li>input{display: none;}
+	.login>li>label{width:198px;height:38px;display: block;margin-top:60px;line-height: 38px;border-bottom: 1px solid white;text-align: center;font-size: 18px;color:white;cursor: pointer;}
+	.login>li{float: left;}
+	.login>li>label:hover{border-bottom: 1px solid #a3a3a3;}
+	.login>li>input:checked~label{border-bottom: 1px solid #5F91B0;}
+/*	登录*/
+	.login>li>.denglu{width:275px;height: 218px;display: none;position: absolute;top: 190px;left: 50%;margin-left:-137px }
+	.login>li>input:checked~.denglu{display: block}
+	.login>li>.denglu>.text,.password{width:233px;height:38px;border: 1px solid white;background-color: rgba(255,255,255,0.20);border-radius: 5px;font-size:16px; }
+	.login>li>.denglu>.text{padding-left: 40px;background: url(images/contact.png) no-repeat 12px center;margin-bottom:30px; }
+	.login>li>.denglu>.password{padding-left: 40px;background: url(images/password.png) no-repeat 12px center;margin-bottom: 28px}
+	.login>li>.denglu>::-webkit-input-placeholder{color: #999;}
+	.login>li>.denglu>.mima{width:275px;font-size: 14px;height: 17px;color: white}
+	.login>li>.denglu>.mima>li>a{color: white;float: right;}
+	.login>li>.denglu>.mima>li>a:hover{color:#5F91B0; }
+	.login>li>.denglu>.mima>li>input{display: none;}
+	.login>li>.denglu>.mima>li>label{width: 17px;height: 17px;background: url(images/icon.png) no-repeat;display: block;float: left;margin-right: 5px}
+	.login>li>.denglu>.mima>li>input:checked+label{background: url(images/icon2.png) no-repeat}
+	.login>li>.denglu>button{width:275px;height: 40px;background-color:#5F91B0;color: white;font-size: 14px;letter-spacing: 10px;border-radius:5px;margin-top: 25px;font-weight: bold}
+	.login>li>.denglu>button:hover{background-color:#657680}
+/*	注册*/
+	.zhuce{width:275px;height:285px;position: absolute;left: 50%;margin-left: -137px;top: 150px ;display: none}
+	.zhuce>::-webkit-input-placeholder{color: #999;}
+	.login>li>input:checked~.zhuce{display: block}
+	.zhuce>.t,.p{width:263px;height:38px;border: 1px solid white;background-color: rgba(255,255,255,0.00);border-radius: 5px;font-size:16px;padding-left:10px}
+	.zhuce>p{width: 263px;height: 38px;border: 1px solid white;background-color: rgba(255,255,255,0.00);border-radius: 5px;font-size:16px;padding-left:10px;line-height: 38px;color:#999;margin: 30px 0}
+	.zhuce>p>a{float: right;display: block;font-size: 14px;border-left: 1px solid #eee;margin: 0 5px;padding-left: 5px;border-radius: 5px;color: #8199CD}
+	.zhuce>.zhanghao{width:275px;height: 17px;margin-top: 25px;color: white;font-size: 14px}
+	.zhuce>.zhanghao>li>a{color: white}
+	.zhuce>.zhanghao>li>a:hover{color:#5F91B0; }
+	.zhuce>.zhanghao>li>p{float: right}
+	.zhuce>.zhanghao>li>p>input{display: none}
+	.zhuce>.zhanghao>li>p>label{width: 17px;height: 17px;background: url(images/icon.png) no-repeat;display: block;float: left;margin-right: 5px;}
+	.zhuce>.zhanghao>li>p>input:checked+label{background: url(images/icon2.png) no-repeat;}
+	.zhuce>button{width:275px;height: 40px;background-color:#5F91B0;color: white;font-size: 14px;letter-spacing: 10px;border-radius:5px;margin-top: 20px;font-weight: bold}
+	.zhuce>button:hover{background-color:#657680}
+	/*	雪碧图区域*/
+	.xuebitu{width:1068px;height: 342px;margin: auto;padding-top: 56px;border-top: 1px solid #ddd}
+	.xuebitu>ul>li{width:192px;height: 286px;text-align: center;font-size: 12px;margin-right: 100px;float: left;}
+	.xuebitu>ul>li:nth-of-type(4){margin-right: 0;}
+	.xuebitu>ul>li>p{color:#272727;margin-top: 24px;margin-bottom: 17px}
+	.xuebitu>ul>li>span{color:#73818A;}
+	.xuebitu>ul>li>a{display: block;background: url(images/kb.png) no-repeat 0 0;width:190px;height:217px;}
+	.xuebitu>ul>li:nth-of-type(2) a{background-position:-200px 0 }
+	.xuebitu>ul>li:nth-of-type(3) a{background-position:-400px 0 }
+	.xuebitu>ul>li:nth-of-type(4) a{background-position:-600px 0 }
+	
+	.xuebitu>ul>li>a:hover{background-position: 0 -220px}
+	.xuebitu>ul>li:nth-of-type(2) a:hover{background-position:-200px -220px }
+	.xuebitu>ul>li:nth-of-type(3) a:hover{background-position:-400px -220px}
+	.xuebitu>ul>li:nth-of-type(4) a:hover{background-position:-600px -220px }
+	
+	.xuebitu>ul>li:hover p{color:#D1A06C }
+	
+	/*底部导航区域*/
+	.footer-nav{height: 117px;background-color:#657680;border-bottom: 1px solid #ddd}
+	.footer-nav>.wzsy{width: 1200px;height: 117px;margin: auto;}
+	.footer-nav>.wzsy>li{width: 64px;height: 32px;float: left;margin: 43px 62px 43px 0;text-align: center}
+	.footer-nav>.wzsy>li:nth-of-type(10){margin-right: 0}
+	.footer-nav>.wzsy>li>a{font-size:15px;color: white;font-weight: bold;}
+	.footer-nav>.wzsy>li>p{font-size: 12px;color:#ddd;font-family: "微软雅黑";margin-top: 5px }
+	.footer-nav>.wzsy>li:hover a{color:#D1A06C }
+	
+/*	全国服务热线*/
+	.footer-quanguo{height: 148px;background-color:#657680 ;}
+	.footer-quanguo-main{width: 894px;height: 148px;margin: auto;padding-top: 40px }
+	.footer-left{width:550px;height: 73px;float: left }
+	.footer-left>h1{font-size: 27px;color:#D1A06C;font-family: "微软雅黑";font-weight: normal}
+	.footer-left>.footer-dian{font-size: 13px;color: white;width: 280px;border-right: 1px solid white;height: 30px;float: left;margin-top: 8px;}
+	.footer-left>.footer-bz{font-size: 13px;color: white;width: 225px;height: 30px;float: right;margin-top: 8px}
+	
+	.footer-right{width: 258px;height: 57px;float: right;margin-top: 10px}
+	.footer-right>a{display: block;float: left;margin-right:43px;}
+	.footer-right>a:hover{background-image: url(images/app1.png)}
+	.footer-right>a:nth-of-type(2):hover{background-image: url(images/weixin1.png)}
+	.footer-right>a:nth-of-type(3):hover{background-image: url(images/weibo1.png)}
+	.footer-right>a:nth-of-type(3){margin-right: 0}
+/*	版权区域*/
+	.banquan{height: 40px;background-color:#4E5C67;color: white;font-size: 14px;text-align: center;line-height: 40px;font-family:"Arial" ;}
+	
+	
+</style>
+</head>
+
+<body>
+<div class="box">
+<!--头部区域-->
+	<div class="header">
+		<img src="images/logo.png" alt="">
+		<ul class="header-denglu">
+			<li><a href="">登录</a><span>/</span></li>
+			<li><a href="">注册</a><span>/</span></li>
+			<li><a href="">400-88888888-666</a><span>/</span></li>
+			<li><a href="">手机官网</a><span>/</span></li>
+			<li><a href="">关注我们</a><span>/</span></li>
+			<li><select name="" id="">
+			<option value="">中文（简体）</option>
+			<option value="">中文（繁体）</option>
+			<option value="">English</option>
+			</select></li>
+		</ul>
+		<div class="header-yuyue">
+			姓名：<input type="text" placeholder="请输入您的姓名" class="xingming">
+			<input type="text" placeholder="请选择所在城市：&nbsp南昌" class="city">
+			<button>立即预约</button>
+		</div>
+		
+	</div>
+	
+	<!--	banner区域-->
+<div class="flexslider">
+	<ul class="slides">
+		<li style="background:url(images/banner1.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner2.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner3.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/banner4.jpg) 50% 0 no-repeat;"></li>
+	</ul>
+   
+		
+<!--	登录区域	-->
+<ul class="login">
+	
+<li>
+	<input type="radio" id="class1" name="class" checked>
+	<label for="class1">登录</label>
+	<div class="denglu">
+	<input type="text" placeholder="手机号/用户名/邮箱" class="text">
+	<input type="password" placeholder="密码" class="password">
+	    <ul class="mima">
+	<li><input type="checkbox" id="one"><label for="one"></label>记住密码
+	<a href="">忘记密码</a></li>
+        </ul>
+    <button>登录</button>  
+	</div>
+</li>
+
+<li>
+	<input type="radio" id="class2" name="class">
+	<label for="class2">注册</label>
+	<div class="zhuce">
+		<input type="text" placeholder="请输入手机号" class="t">
+		<p>验证码<a href="">获取验证码</a></p>
+		<input type="password" placeholder="请输入登录密码" class="p">
+		<ul class="zhanghao">
+			<li>
+			<a href="">已有账号</a>
+			<p><input type="checkbox" id="two"><label for="two"></label>用户协议</p>
+			</li></ul>
+			<button>注册</button>		
+	</div>
+</li>	
+</ul>		
+ </div>				
+	<!--	雪碧图区域-->
+	<div class="xuebitu">
+		<ul>
+			<li><a href=""></a>
+			  <p>一站式玩拍体验</p>
+			  <span>拍婚照·度蜜月·游美景·享美食</span>
+			</li>
+			
+			<li><a href=""></a>
+			  <p>没有隐形消费</p>
+			  <span>除套系价格，全程不再收取任何费用</span>
+			</li>
+			
+			<li><a href=""></a>
+			  <p>一坚持口碑营销</p>
+			  <span>更高品质的服务就是最有力度的营销</span>
+			</li>
+			
+			<li><a href=""></a>
+			  <p>以客片说话</p>
+			  <span>总监团队，100%原创客片</span>
+			</li>
+		</ul>		
+	</div>
+<!--底部导航区域-->
+	<div class="footer-nav">
+		<ul class="wzsy">
+			<li><a href="index.html">网站首页</a><p>HOME</p></li>
+			<li><a href="xiangqingye.html">全球样片</a><p>WORKS</p></li>
+			<li><a href="">客片欣赏</a><p>LOVESHOW</p></li>
+			<li><a href="xinwenzhongxin.html">新闻广告</a><p>NEWS</p></li>
+			<li><a href="">景点介绍</a><p>SCENE</p></li>
+			<li><a href="">关于我们</a><p>ABOUT</p></li>
+			<li><a href="">联系我们</a><p>CONTACT</p></li>
+			<li><a href="">最新留言</a><p>BOOK</p></li>
+			<li><a href="">官方微博</a><p>WEIBO</p></li>
+			<li><a href="">天猫店铺</a><p>TMALL</p></li>
+		</ul>
+	</div>
+<!--	全国服务热线-->
+	<div class="footer-quanguo">
+		<div class="footer-quanguo-main">
+			<div class="footer-left">
+				<h1>全国服务热线：400-88888888-666</h1>
+				   <div class="footer-dian">
+				<p>南昌店：江西省南昌市青山湖区紫阳大道</p>
+				<p>联系电话：0791-6666666</p>
+				   </div>
+				   <div class="footer-bz">
+				<p>巴中店：四川省巴中市通江县顺城大街</p>
+				<p>联系电话：0124-6666666</p>
+				   </div>
+			</div>
+			<div class="footer-right">
+				<a href=""><img src="images/app.png" alt=""></a>
+				<a href=""><img src="images/weixin.png" alt=""></a>
+				<a href=""><img src="images/weibo.png" alt=""></a>
+				
+			</div>
+			</div>
+		</div>
+<!--	版权区域-->
+	<div class="banquan">copyright &copy; 2006-2017 zippy sunshine</div>
+</div>
+</body>
+</html>
