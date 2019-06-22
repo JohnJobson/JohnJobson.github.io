@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>测试3</title>
-	<!-- <script src="../dist/js/jquery1.3.8.min.js"></script> -->
 	<script src="jquery1.3.8.min.js"></script>
 </head>
 <body>
@@ -15,9 +14,13 @@
          data:'json',  
         success: function(data){  //请求成功后的回调函数
             console.log(data);
-            alert(data);
+            alert(1);
+        },
+     	error:function (data) {
+            alert(2);
         }
-      })
+
+      });
       })
 	</script>
 </body>
