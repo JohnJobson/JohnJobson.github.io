@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajxa</title>
+</head>
+<body>
+	<script>
+		$.ajax({
+		  type: 'get',
+		  url: 'https://github.com/JohnJobson/JohnJobson.github.io/blob/master/ajax/number.json',
+		  data: 'json',
+		  success: function (data) {
+		  	consle.log(data);
+		  }
+		});
+	</script>
+</body>
+</html>
