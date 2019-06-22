@@ -9,14 +9,13 @@
 	<p>测试</p>
 	<script>
 	  $.ajax({
-             type: "get",
-             url: "https://johnjobson.github.io/ajax/number.json", 
-             data:'json',  
-            success: function(data){  //请求成功后的回调函数
-              
-                console.log(data);
- 
-            }
+  		 async : false,    //表示请求是否异步处理
+         type: "get",
+         url: "https://johnjobson.github.io/ajax/number.json", 
+         data:'json',  
+        success: function(data){  //请求成功后的回调函数
+            console.log(data);
+        }
       })
 	</script>
 </body>
