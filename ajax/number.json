@@ -1,21 +1,15 @@
-
-{
-    "status": "0",
-    "message": "success",
-    "data": {
-        "title": {
-            "id": "001",
-            "name" : "test"
-        },
-        "content": [
-            {
-                "id": "001",
-                "value":"hello 001"
-            },
-            {
-                "id": "002",
-                 "value":"hello 002"
-            }
-        ]
-    }
- }
+[
+      {
+          "name": "张三",
+          "sex": "男"
+      }, {
+          "name": "李思",
+          "sex": "女"
+      }, {
+          "name": "王五",
+          "sex": "男"
+      }, {
+          "name": "赵柳",
+          "sex": "女"
+      }
+]
