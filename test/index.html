@@ -2,27 +2,40 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
-	<title>测试5</title>
+	<title>测试6</title>
 	<script src="jquery1.3.8.min.js"></script>
 </head>
 <body>
 <p>测试</p>
 	<script>
 	$(function (){
-	  $.ajax({
-         type: "get",
-         // url: "../ajax/number.json", 
-         url: "https://johnjobson.github.io/ajax/number.json", 
-         data:'json',  
-        success: function(data){  //请求成功后的回调函数
-            console.log(data);
-            alert(1);
-        },
-     	error:function (data) {
-            alert(2);
-        }
+	  // $.ajax({
+   //       type: "get",
+   //       // url: "../ajax/number.json", 
+   //       url: "https://johnjobson.github.io/ajax/number.json", 
+   //       data:'json',  
+   //      success: function(data){  //请求成功后的回调函数
+   //          console.log(data);
+   //          alert(1);
+   //      },
+   //   	error:function (data) {
+   //          alert(2);
+   //      }
 
-      });
+   //    });
+
+      $.ajax({
+  url: "https://johnjobson.github.io/ajax/number.json",
+  type: "GET",
+  dataType: "json",
+  success: function(data) {
+      $.each(data, function(i, item) {
+          var str = '<li>姓名:' + item.name + ' 性别：' + item.sex + '</li>';
+          $('.list ul').append(str);
+
+      })
+  }
+})
       })
 	</script>
 </body>
