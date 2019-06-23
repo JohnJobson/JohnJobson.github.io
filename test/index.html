@@ -18,7 +18,7 @@
       type: "GET",
       dataType: "json",
       success: function(data) {
-        consloe.log(data);
+          console.log(JSON.stringify(data));
           $.each(data, function(i, item) {
               var str = '<li>姓名:' + item.name + ' 性别：' + item.sex + '</li>';
               $('.list ul').append(str);
