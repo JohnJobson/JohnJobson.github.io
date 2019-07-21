@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-07-20 21:10:05
+ * @version $Id$
+ */
+ 
+/*全局样式*/
+body,html{height: 100%;-webkit-tap-highlight-color: transparent;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {padding:0;margin:0;}
+li{list-style: none;}
+a{text-decoration: none;}
+input,button,select,textarea{outline: none;vertical-align: middle;font-family:'\5FAE\8F6F\96C5\9ED1';}
+textarea{resize: none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{cursor: pointer;border: 0;}
+em,i{font-style:normal;}
+b{font-weight: normal;}
+/*微信图片放大*/
+img{vertical-align: middle;pointer-events: none;border: none;}
+ 
+/*微软雅黑*/
+body{font-family:'\5FAE\8F6F\96C5\9ED1';background-color: #FFFFFF!important;}
+
+/*custom css*/
+.english{font-family: "Arial";}
+
