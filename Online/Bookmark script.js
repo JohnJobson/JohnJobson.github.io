@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         书签菜单1
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      1.0
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.tampermonkey.net/scripts.php
