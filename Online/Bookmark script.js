@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         书签菜单
+// @name         书签菜单1
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.tampermonkey.net/scripts.php
@@ -18,6 +18,8 @@
 // @grant       GM_setValue
 // @grant       GM_download
 // @run-at    document-end
+//@updateURL https://johnjobson.github.io/Online/Bookmark%20script.js
+//@downloadURL https://johnjobson.github.io/Online/Bookmark%20script.js
 // ==/UserScript==
 
 (function() {
@@ -26,10 +28,10 @@
     // Your code here...
     function Ajax_html(){
 
-    //css
-    let style = document.createElement("style");
+//css
+        let style = document.createElement("style");
 
-    style.appendChild(document.createTextNode(`
+        style.appendChild(document.createTextNode(`
     #yue_muenbox{
         position: fixed;
         top: 0;
@@ -61,15 +63,16 @@
     }
 
     #yue_muen ul {
+        padding-left: 0;
         height: 100vh;
         box-sizing: border-box;
         overflow-y: scroll;
     }
    #yue_muen ul li{
-        border-bottom: 1px dashed #E2E2E2;
+        border-bottom: 1px dashed #E2E2E2;list-style: none;
     }
     #yue_muen ul li:first-child{padding-top: 40px;}
-    #yue_muen ul li:last-child{padding-bottom: 20px;}
+    #yue_muen ul li:last-child{margin-bottom: 20px;}
 
     #yue_muen a{display: inline-block;width: 100%;height: 28px;line-height: 28px;font-size: 14px;text-decoration: none;color: #666666;text-align: center;}
     #yue_muen a:hover{color: #00a4ff;background-color: #e2e2e2;}
@@ -89,7 +92,10 @@
         -o-user-select: none;
         user-select: none;
     }
-
+    #yue_btn.active{
+        right: -60px;
+        width: 60px;
+    }
     #yue_muenbox.active {
         margin-left: -160px;
     }
@@ -97,6 +103,10 @@
 
         document.head.appendChild(style);
 
+
+
+    //alert(1);
+    //console.log(1);
         $.ajax({
                 url:'https://johnjobson.github.io/ajax/number.json',//地址
                 dataType:'json',//数据类型
@@ -121,7 +131,6 @@
         });
 
     }
-    ``
     Ajax_html();
 
 //js
