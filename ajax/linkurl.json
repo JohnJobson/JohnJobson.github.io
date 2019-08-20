@@ -1,21 +1,21 @@
 [
   {
-	  "name": "ECMAScript 6 入门",
-	  "link": "http://es6.ruanyifeng.com/"
+	  "linkName": "ECMAScript 6 入门",
+	  "linkUrl": "http://es6.ruanyifeng.com/"
   },{
-    "name": "vuejs",
-    "link": "https://cn.vuejs.org/"
+    "linkName": "vuejs",
+    "linkUrl": "https://cn.vuejs.org/"
   },{
-    "name": "leancloud",
-    "link": "https://leancloud.cn/"
+    "linkName": "leancloud",
+    "linkUrl": "https://leancloud.cn/"
   },{
-    "name": "leancloud",
-    "link": "https://leancloud.cn/"   
+    "linkName": "leancloud",
+    "linkUrl": "https://leancloud.cn/"   
   },{
-    "name": "jq22",
-    "link": "http://www.jq22.com/"
+    "linkName": "jq22",
+    "linkUrl": "http://www.jq22.com/"
   },{    
-    "name": "jquery",
-    "link": "http://jquery.cuishifeng.cn/"
+    "linkName": "jquery",
+    "linkUrl": "http://jquery.cuishifeng.cn/"
   }
 ]
