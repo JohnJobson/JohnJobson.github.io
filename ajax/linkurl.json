@@ -3,19 +3,19 @@
 	  "linkName": "ECMAScript 6 入门",
 	  "linkUrl": "http://es6.ruanyifeng.com/"
   },{
-    "linkName": "vuejs",
+    "linkName": "Vue.js",
     "linkUrl": "https://cn.vuejs.org/"
   },{
-    "linkName": "leancloud",
+    "linkName": "LeanCloud",
     "linkUrl": "https://leancloud.cn/"
   },{
-    "linkName": "leancloud",
-    "linkUrl": "https://leancloud.cn/"   
+    "linkName": "APICloud",
+    "linkUrl": "https://www.apicloud.com/"   
   },{
-    "linkName": "jq22",
+    "linkName": "Jq22",
     "linkUrl": "http://www.jq22.com/"
   },{    
-    "linkName": "jquery",
+    "linkName": "Jquery",
     "linkUrl": "http://jquery.cuishifeng.cn/"
   }
 ]
