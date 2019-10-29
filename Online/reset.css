@@ -1,9 +1,8 @@
 @charset "UTF-8";
 /**
  * 
- * @authors Your Name (you@example.org)
- * @date    2019-07-20 21:10:05
- * @version $Id$
+ * @authors  Johnbson(https://johnjobson.github.io)
+ * @date    2019-10-29
  */
  
 /*全局样式*/
@@ -26,3 +25,5 @@ body{font-family:'\5FAE\8F6F\96C5\9ED1';background-color: #FFFFFF!important;}
 /*custom css*/
 .english{font-family: "Arial";}
 
+/*清除浮动*/
+.clearfix:after {content: "";display: block;clear: both;}
