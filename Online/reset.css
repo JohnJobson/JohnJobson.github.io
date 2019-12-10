@@ -16,6 +16,7 @@ h1,h2,h3,h4,h5,h6{font-weight: normal;}
 button{cursor: pointer;border: 0;}
 em,i{font-style:normal;}
 b{font-weight: normal;}
+table{border-collapse:collapse;}
 /*微信图片放大*/
 img{vertical-align: middle;pointer-events: none;border: none;}
  
