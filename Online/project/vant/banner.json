@@ -1,15 +1,13 @@
 {
   "data": {
-	"totalpage": 5,
-	"pagenum": 4,
-	"users": [
+	"banner": [
 	  {
 		"id": 1,
-		"images": "https://johnjobson.github.io/banner1.jpg"
+		"images": "https://johnjobson.github.io/Online/project/vant/uploads/banner1.jpg"
 	  },
 	  {
 		"id": 2,
-		"images": "https://johnjobson.github.io/banner2.jpg"
+		"images": "https://johnjobson.github.io/Online/project/vant/uploads/banner2.jpg"
 	  }
 	]
   },
