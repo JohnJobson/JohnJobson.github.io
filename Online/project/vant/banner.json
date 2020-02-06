@@ -8,6 +8,14 @@
 	  {
 		"id": 2,
 		"images": "https://johnjobson.github.io/Online/project/vant/uploads/banner2.jpg"
+	  },
+	  {
+		"id": 1,
+		"images": "https://johnjobson.github.io/Online/project/vant/uploads/banner1.jpg"
+	  },
+	  {
+		"id": 2,
+		"images": "https://johnjobson.github.io/Online/project/vant/uploads/banner2.jpg"
 	  }
 	]
   },
