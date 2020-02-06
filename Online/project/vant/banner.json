@@ -1,0 +1,20 @@
+{
+  "data": {
+	"totalpage": 5,
+	"pagenum": 4,
+	"users": [
+	  {
+		"id": 1,
+		"images": "https://johnjobson.github.io/banner1.jpg"
+	  },
+	  {
+		"id": 2,
+		"images": "https://johnjobson.github.io/banner2.jpg"
+	  }
+	]
+  },
+  "meta": {
+	"msg": "获取banner数据成功",
+	"status": 200
+  }
+}
