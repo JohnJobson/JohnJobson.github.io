@@ -47,7 +47,7 @@
     }, 300)
   }
   if (localStorage.getItem('token') != null) {
-    $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + localStorage.getItem('token'));
+    $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?' + localStorage.getItem('token'));
       setTimeout(() => {
         // window.localStorage.removeItem('token')
       }, 1000)
