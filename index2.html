@@ -49,7 +49,7 @@
   if (localStorage.getItem('token') != null) {
     $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + localStorage.getItem('token'));
       setTimeout(() => {
-        window.localStorage.removeItem('token')
+        // window.localStorage.removeItem('token')
       }, 1000)
   }
   </script>
