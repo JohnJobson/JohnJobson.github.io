@@ -39,7 +39,7 @@
   <script>
   var originUrl = window.location.href;
   var valiable = originUrl.split("?")[1]
-  if (valiable != '') {
+  if (valiable != undefined) {
     window.localStorage.setItem('token', valiable)
     window.location.href = 'https://johnjobson.github.io/index2.html'
   }
