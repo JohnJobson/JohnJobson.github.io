@@ -44,7 +44,7 @@
     window.location.href = 'https://johnjobson.github.io/index2.html'
   }
   if (localStorage.getItem('token') != null) {
-    $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + valiable);
+    $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + localStorage.getItem('token'));
     window.localStorage.removeItem('token')
   }
   </script>
