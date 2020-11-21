@@ -39,8 +39,10 @@
   <script>
   var originUrl = window.location.href;
   var valiable = originUrl.split("?")[1]
-  window.localStorage.setItem('token', valiable)
-  console.log(valiable)
+  if (valiable != '') {
+    window.localStorage.setItem('token', valiable)
+    window.location.href = 'https://johnjobson.github.io/index2.html'
+  }
   if (localStorage.getItem('token') != null) {
     $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + valiable);
     window.localStorage.removeItem('token')
