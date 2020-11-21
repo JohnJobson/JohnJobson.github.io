@@ -3,47 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Examples</title>
+<title></title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
 <style>
-  	body,html{height: 100%;-webkit-tap-highlight-color: transparent;}
-		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {padding:0;margin:0;}
-		li{list-style: none;}
-		a{text-decoration: none;}
-		input,button,select,textarea{outline: none;vertical-align: middle;font-family:'\5FAE\8F6F\96C5\9ED1';}
-		textarea{resize: none;}
-		h1,h2,h3,h4,h5,h6{font-weight: normal;}
-		button{cursor: pointer;border: 0;}
-		em,i{font-style:normal;}
-		b{font-weight: normal;}
-		table{border-collapse:collapse;}
-		/*微信图片放大*/
-		img{vertical-align: middle;pointer-events: none;border: none;}
-		 
-		/*微软雅黑*/
-		body{font-family:'\5FAE\8F6F\96C5\9ED1';background-color: #FFFFFF!important;}
+    body,html{height: 100%;-webkit-tap-highlight-color: transparent;}
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {padding:0;margin:0;}
+    li{list-style: none;}
+    a{text-decoration: none;}
+    input,button,select,textarea{outline: none;vertical-align: middle;font-family:'\5FAE\8F6F\96C5\9ED1';}
+    textarea{resize: none;}
+    h1,h2,h3,h4,h5,h6{font-weight: normal;}
+    button{cursor: pointer;border: 0;}
+    em,i{font-style:normal;}
+    b{font-weight: normal;}
+    table{border-collapse:collapse;}
+    /*微信图片放大*/
+    img{vertical-align: middle;pointer-events: none;border: none;}
+     
+    /*微软雅黑*/
+    body{font-family:'\5FAE\8F6F\96C5\9ED1';background-color: #FFFFFF!important;}
 
-		/*custom css*/
-		.english{font-family: "Arial";}
+    /*custom css*/
+    .english{font-family: "Arial";}
 
-		/*清除浮动*/
-		.clearfix:after {content: "";display: block;clear: both;}
-		iframe {width: 100%;height: 100vh;border: 0!important;-webkit-overflow-scrolling: touch;-webkit-overflow-scrolling: auto;}
+    /*清除浮动*/
+    .clearfix:after {content: "";display: block;clear: both;}
+    iframe {width: 100%;height: 100vh;border: 0!important;-webkit-overflow-scrolling: touch;-webkit-overflow-scrolling: auto;}
 </style>
 <script src="./js/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-	<!-- file:///D:/01.Web/02.jq/02.index.html?url=https://johnjobson.gitee.io/ -->
   <iframe src=""></iframe>
   <script>
-
-  var originUrl=window.location.href;
+  var originUrl = window.location.href;
   var valiable = originUrl.split("?")[1]
+  window.localStorage.setItem('token', valiable)
   console.log(valiable)
-$('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + valiable);
-
+  if (localStorage.getItem('token') != null) {
+    $('iframe').attr("src", 'https://gxw.yanshuai.net/api/m/file/nursingPlan/index.html?id=' + valiable);
+    window.localStorage.removeItem('token')
+  }
   </script>
 </body>
 </html>
